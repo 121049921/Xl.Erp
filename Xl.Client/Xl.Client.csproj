@@ -1,0 +1,2020 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D38A38DF-F291-4C12-B914-1A509CECB237}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Xl.Client</RootNamespace>
+    <AssemblyName>Xl.Client</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevComponents.Charts.Design, Version=14.1.0.34, Culture=neutral, PublicKeyToken=90f470f34c89ccaf, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Cashier\DotNetBarComponent\lib\DevComponents.Charts.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="DevComponents.DotNetBar.Charts, Version=14.1.0.34, Culture=neutral, PublicKeyToken=7eb7c3a35b91de04, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Cashier\DotNetBarComponent\lib\DevComponents.DotNetBar.Charts.dll</HintPath>
+    </Reference>
+    <Reference Include="DevComponents.DotNetBar.Keyboard, Version=14.1.0.34, Culture=neutral, PublicKeyToken=7eb7c3a35b91de04, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Cashier\DotNetBarComponent\lib\DevComponents.DotNetBar.Keyboard.dll</HintPath>
+    </Reference>
+    <Reference Include="DevComponents.DotNetBar.Layout, Version=14.1.0.34, Culture=neutral, PublicKeyToken=7eb7c3a35b91de04, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Cashier\DotNetBarComponent\lib\DevComponents.DotNetBar.Layout.dll</HintPath>
+    </Reference>
+    <Reference Include="DevComponents.DotNetBar.Layout.Design, Version=14.1.0.34, Culture=neutral, PublicKeyToken=7eb7c3a35b91de04, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Cashier\DotNetBarComponent\lib\DevComponents.DotNetBar.Layout.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="DevComponents.DotNetBar.Schedule, Version=14.1.0.34, Culture=neutral, PublicKeyToken=7eb7c3a35b91de04, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Cashier\DotNetBarComponent\lib\DevComponents.DotNetBar.Schedule.dll</HintPath>
+    </Reference>
+    <Reference Include="DevComponents.DotNetBar.SuperGrid, Version=14.1.0.34, Culture=neutral, PublicKeyToken=7eb7c3a35b91de04, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Cashier\DotNetBarComponent\lib\DevComponents.DotNetBar.SuperGrid.dll</HintPath>
+    </Reference>
+    <Reference Include="DevComponents.DotNetBar2, Version=14.1.0.34, Culture=neutral, PublicKeyToken=7eb7c3a35b91de04, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Cashier\DotNetBarComponent\lib\DevComponents.DotNetBar2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevComponents.Instrumentation, Version=14.1.0.34, Culture=neutral, PublicKeyToken=f90dc37c26666a67, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Cashier\DotNetBarComponent\lib\DevComponents.Instrumentation.dll</HintPath>
+    </Reference>
+    <Reference Include="DevComponents.SuperGrid.Design, Version=14.1.0.34, Culture=neutral, PublicKeyToken=26d81176cfa2b486, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Cashier\DotNetBarComponent\lib\DevComponents.SuperGrid.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="DevComponents.TreeGX, Version=14.1.0.34, Culture=neutral, PublicKeyToken=055db68f670cfeab, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Cashier\DotNetBarComponent\lib\DevComponents.TreeGX.dll</HintPath>
+    </Reference>
+    <Reference Include="LiteDB, Version=4.1.4.0, Culture=neutral, PublicKeyToken=4ee40123013c9f27, processorArchitecture=MSIL">
+      <HintPath>..\packages\LiteDB.4.1.4\lib\net40\LiteDB.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Serilog, Version=2.0.0.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
+      <HintPath>..\packages\Serilog.2.3.0\lib\net46\Serilog.dll</HintPath>
+    </Reference>
+    <Reference Include="Serilog.Sinks.LiteDB, Version=1.0.13.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Serilog.Sinks.LiteDB.1.0.13\lib\net45\Serilog.Sinks.LiteDB.dll</HintPath>
+    </Reference>
+    <Reference Include="Serilog.Sinks.PeriodicBatching, Version=2.0.0.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
+      <HintPath>..\packages\Serilog.Sinks.PeriodicBatching.2.1.0\lib\net45\Serilog.Sinks.PeriodicBatching.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.Common, Version=5.0.0.0, Culture=neutral, PublicKeyToken=02c12cbda47e6587, processorArchitecture=MSIL">
+      <HintPath>..\packages\ServiceStack.Common.5.9.0\lib\net45\ServiceStack.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.Interfaces, Version=5.0.0.0, Culture=neutral, PublicKeyToken=02c12cbda47e6587, processorArchitecture=MSIL">
+      <HintPath>..\packages\ServiceStack.Interfaces.5.9.0\lib\net45\ServiceStack.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.Redis, Version=5.0.0.0, Culture=neutral, PublicKeyToken=02c12cbda47e6587, processorArchitecture=MSIL">
+      <HintPath>..\packages\ServiceStack.Redis.5.9.0\lib\net45\ServiceStack.Redis.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.Text, Version=5.0.0.0, Culture=neutral, PublicKeyToken=02c12cbda47e6587, processorArchitecture=MSIL">
+      <HintPath>..\packages\ServiceStack.Text.5.9.0\lib\net45\ServiceStack.Text.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Messaging" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.5.3\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BaseBusinessEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseBusinessEditForm.Designer.cs">
+      <DependentUpon>BaseBusinessEditForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bs\RepairOrderEditFrom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bs\RepairOrderEditFrom.Designer.cs">
+      <DependentUpon>RepairOrderEditFrom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bs\RepairOrderListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bs\RepairOrderListForm.Designer.cs">
+      <DependentUpon>RepairOrderListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NavigationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NavigationForm.Designer.cs">
+      <DependentUpon>NavigationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Sys\SysRoleEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sys\SysRoleEditForm.Designer.cs">
+      <DependentUpon>SysRoleEditForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sys\SysRoleListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sys\SysRoleListForm.Designer.cs">
+      <DependentUpon>SysRoleListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sys\SysUserEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sys\SysUserEditForm.Designer.cs">
+      <DependentUpon>SysUserEditForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sys\SysUserListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sys\SysUserListForm.Designer.cs">
+      <DependentUpon>SysUserListForm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="BaseBusinessEditForm.resx">
+      <DependentUpon>BaseBusinessEditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bs\RepairOrderEditFrom.resx">
+      <DependentUpon>RepairOrderEditFrom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NavigationForm.resx">
+      <DependentUpon>NavigationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Sys\SysRoleEditForm.resx">
+      <DependentUpon>SysRoleEditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sys\SysRoleListForm.resx">
+      <DependentUpon>SysRoleListForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sys\SysUserEditForm.resx">
+      <DependentUpon>SysUserEditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sys\SysUserListForm.resx">
+      <DependentUpon>SysUserListForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Config\AppSettings.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Xl.Common\Xl.Common.csproj">
+      <Project>{e04f0c4c-2d4f-42c0-b09f-d1b583014edf}</Project>
+      <Name>Xl.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Xl.Model\Xl.Model.csproj">
+      <Project>{58E58B51-EAB9-4426-8381-95F82CAD3D81}</Project>
+      <Name>Xl.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Xl.UIComponent\Xl.UIComponent.csproj">
+      <Project>{4858f56f-647e-47de-a820-99b1d74c651e}</Project>
+      <Name>Xl.UIComponent</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Icon.ico" />
+    <None Include="Resources\Icon.ico" />
+    <None Include="Resources\Icon.bmp" />
+    <None Include="Resources\按钮.png" />
+    <None Include="Resources\组织.png" />
+    <None Include="Resources\application_key.png" />
+    <None Include="Resources\application_home.png" />
+    <None Include="Resources\application_go.png" />
+    <None Include="Resources\application_get.png" />
+    <None Include="Resources\application_form_magnify.png" />
+    <None Include="Resources\application_form_edit.png" />
+    <None Include="Resources\application_form_delete.png" />
+    <None Include="Resources\application_form_add.png" />
+    <None Include="Resources\application_form.png" />
+    <None Include="Resources\application_error.png" />
+    <None Include="Resources\application_edit.png" />
+    <None Include="Resources\application_double.png" />
+    <None Include="Resources\application_delete.png" />
+    <None Include="Resources\application_cascade.png" />
+    <None Include="Resources\application_add.png" />
+    <None Include="Resources\application.png" />
+    <None Include="Resources\anchor.png" />
+    <None Include="Resources\add.png" />
+    <None Include="Resources\accept.png" />
+    <None Include="Resources\租赁进场单.jpg" />
+    <None Include="Resources\租赁出场单.jpg" />
+    <None Include="Resources\直入直出单.jpg" />
+    <None Include="Resources\暂停.png" />
+    <None Include="Resources\下一页.png" />
+    <None Include="Resources\维修单.jpg" />
+    <None Include="Resources\退库单.jpg" />
+    <None Include="Resources\退货单.jpg" />
+    <None Include="Resources\停租单.jpg" />
+    <None Include="Resources\调拨单.jpg" />
+    <None Include="Resources\首张.png" />
+    <None Include="Resources\收料单.jpg" />
+    <None Include="Resources\审核.png" />
+    <None Include="Resources\上一页.png" />
+    <None Include="Resources\商砼小票.jpg" />
+    <None Include="Resources\启用.png" />
+    <None Include="Resources\盘点单.jpg" />
+    <None Include="Resources\末张.png" />
+    <None Include="Resources\库房管理流程.jpg" />
+    <None Include="Resources\库房管理流程.gif" />
+    <None Include="Resources\反审.png" />
+    <None Include="Resources\发料单.jpg" />
+    <None Include="Resources\处置单.jpg" />
+    <None Include="Resources\查询.png" />
+    <None Include="Resources\报损单.jpg" />
+    <None Include="Resources\zoom_out.png" />
+    <None Include="Resources\zoom_in.png" />
+    <None Include="Resources\zoom.png" />
+    <None Include="Resources\xhtml_valid.png" />
+    <None Include="Resources\xhtml_go.png" />
+    <None Include="Resources\xhtml_error.png" />
+    <None Include="Resources\xhtml_delete.png" />
+    <None Include="Resources\xhtml_add.png" />
+    <None Include="Resources\xhtml.png" />
+    <None Include="Resources\wrench_orange.png" />
+    <None Include="Resources\wrench.png" />
+    <None Include="Resources\world_orbit.png" />
+    <None Include="Resources\world_night.png" />
+    <None Include="Resources\world_link.png" />
+    <None Include="Resources\world_key.png" />
+    <None Include="Resources\world_go.png" />
+    <None Include="Resources\world_edit.png" />
+    <None Include="Resources\world_delete.png" />
+    <None Include="Resources\world_dawn.png" />
+    <None Include="Resources\world_connect.png" />
+    <None Include="Resources\world_add.png" />
+    <None Include="Resources\world.png" />
+    <None Include="Resources\webcam_stop.png" />
+    <None Include="Resources\webcam_start.png" />
+    <None Include="Resources\webcam_error.png" />
+    <None Include="Resources\webcam_delete.png" />
+    <None Include="Resources\webcam_connect.png" />
+    <None Include="Resources\webcam_add.png" />
+    <None Include="Resources\webcam.png" />
+    <None Include="Resources\weather_sun.png" />
+    <None Include="Resources\weather_snow.png" />
+    <None Include="Resources\weather_rain.png" />
+    <None Include="Resources\weather_lightning.png" />
+    <None Include="Resources\weather_cloudy_rain.png" />
+    <None Include="Resources\weather_cloudy.png" />
+    <None Include="Resources\weather_clouds.png" />
+    <None Include="Resources\weather_cloud.png" />
+    <None Include="Resources\wand.png" />
+    <None Include="Resources\vector_key.png" />
+    <None Include="Resources\vector_delete.png" />
+    <None Include="Resources\vector_add.png" />
+    <None Include="Resources\vector.png" />
+    <None Include="Resources\vcard_key.png" />
+    <None Include="Resources\vcard_edit.png" />
+    <None Include="Resources\vcard_delete.png" />
+    <None Include="Resources\vcard_add.png" />
+    <None Include="Resources\vcard.png" />
+    <None Include="Resources\user_tick.png" />
+    <None Include="Resources\user_suit_black.png" />
+    <None Include="Resources\user_suit.png" />
+    <None Include="Resources\user_star.png" />
+    <None Include="Resources\user_red.png" />
+    <None Include="Resources\user_orange.png" />
+    <None Include="Resources\user_mature.png" />
+    <None Include="Resources\user_magnify.png" />
+    <None Include="Resources\user_key.png" />
+    <None Include="Resources\user_home.png" />
+    <None Include="Resources\user_green.png" />
+    <None Include="Resources\user_gray_cool.png" />
+    <None Include="Resources\user_gray.png" />
+    <None Include="Resources\user_go.png" />
+    <None Include="Resources\user_female.png" />
+    <None Include="Resources\user_edit.png" />
+    <None Include="Resources\user_earth.png" />
+    <None Include="Resources\user_delete.png" />
+    <None Include="Resources\user_cross.png" />
+    <None Include="Resources\user_comment.png" />
+    <None Include="Resources\user_brown.png" />
+    <None Include="Resources\user_b.png" />
+    <None Include="Resources\user_alert.png" />
+    <None Include="Resources\user_add.png" />
+    <None Include="Resources\user.png" />
+    <None Include="Resources\tux.png" />
+    <None Include="Resources\transmit_red.png" />
+    <None Include="Resources\transmit_go.png" />
+    <None Include="Resources\transmit_error.png" />
+    <None Include="Resources\transmit_edit.png" />
+    <None Include="Resources\transmit_delete.png" />
+    <None Include="Resources\transmit_blue.png" />
+    <None Include="Resources\transmit_add.png" />
+    <None Include="Resources\transmit.png" />
+    <None Include="Resources\timeline_marker.png" />
+    <None Include="Resources\time_red.png" />
+    <None Include="Resources\time_green.png" />
+    <None Include="Resources\time_go.png" />
+    <None Include="Resources\time_delete.png" />
+    <None Include="Resources\time_add.png" />
+    <None Include="Resources\time.png" />
+    <None Include="Resources\tick.png" />
+    <None Include="Resources\thumb_up.png" />
+    <None Include="Resources\thumb_down.png" />
+    <None Include="Resources\theme.png" />
+    <None Include="Resources\textfield_rename.png" />
+    <None Include="Resources\textfield_key.png" />
+    <None Include="Resources\textfield_delete.png" />
+    <None Include="Resources\textfield_add.png" />
+    <None Include="Resources\textfield.png" />
+    <None Include="Resources\text_uppercase.png" />
+    <None Include="Resources\text_underline.png" />
+    <None Include="Resources\text_tab.png" />
+    <None Include="Resources\text_superscript.png" />
+    <None Include="Resources\text_subscript.png" />
+    <None Include="Resources\text_strikethrough.png" />
+    <None Include="Resources\text_spelling.png" />
+    <None Include="Resources\text_smallcaps.png" />
+    <None Include="Resources\text_signature.png" />
+    <None Include="Resources\text_shading.png" />
+    <None Include="Resources\text_ruler.png" />
+    <None Include="Resources\text_rotate_270.png" />
+    <None Include="Resources\text_rotate_180.png" />
+    <None Include="Resources\text_rotate_90.png" />
+    <None Include="Resources\text_rotate_0.png" />
+    <None Include="Resources\text_right_to_left.png" />
+    <None Include="Resources\text_replace.png" />
+    <None Include="Resources\text_padding_top.png" />
+    <None Include="Resources\text_padding_right.png" />
+    <None Include="Resources\text_padding_left.png" />
+    <None Include="Resources\text_padding_bottom.png" />
+    <None Include="Resources\text_mirror.png" />
+    <None Include="Resources\text_lowercase_a.png" />
+    <None Include="Resources\text_lowercase.png" />
+    <None Include="Resources\text_list_numbers.png" />
+    <None Include="Resources\text_list_bullets.png" />
+    <None Include="Resources\text_linespacing.png" />
+    <None Include="Resources\text_letterspacing.png" />
+    <None Include="Resources\text_letter_omega.png" />
+    <None Include="Resources\text_left_to_right.png" />
+    <None Include="Resources\text_kerning.png" />
+    <None Include="Resources\text_italic.png" />
+    <None Include="Resources\text_inverse.png" />
+    <None Include="Resources\text_indent_remove.png" />
+    <None Include="Resources\text_indent.png" />
+    <None Include="Resources\text_horizontalrule.png" />
+    <None Include="Resources\text_heading_6.png" />
+    <None Include="Resources\text_heading_5.png" />
+    <None Include="Resources\text_heading_4.png" />
+    <None Include="Resources\text_heading_3.png" />
+    <None Include="Resources\text_heading_2.png" />
+    <None Include="Resources\text_heading_1.png" />
+    <None Include="Resources\text_font_default.png" />
+    <None Include="Resources\text_flip.png" />
+    <None Include="Resources\text_fit.png" />
+    <None Include="Resources\text_dropcaps.png" />
+    <None Include="Resources\text_double_underline.png" />
+    <None Include="Resources\text_direction.png" />
+    <None Include="Resources\text_complete.png" />
+    <None Include="Resources\text_columns.png" />
+    <None Include="Resources\text_bold.png" />
+    <None Include="Resources\text_allcaps.png" />
+    <None Include="Resources\text_align_right.png" />
+    <None Include="Resources\text_align_left.png" />
+    <None Include="Resources\text_align_justify.png" />
+    <None Include="Resources\text_align_center.png" />
+    <None Include="Resources\text_ab.png" />
+    <None Include="Resources\television_star.png" />
+    <None Include="Resources\television_out.png" />
+    <None Include="Resources\television_off.png" />
+    <None Include="Resources\television_in.png" />
+    <None Include="Resources\television_delete.png" />
+    <None Include="Resources\television_add.png" />
+    <None Include="Resources\television.png" />
+    <None Include="Resources\telephone_red.png" />
+    <None Include="Resources\telephone_link.png" />
+    <None Include="Resources\telephone_key.png" />
+    <None Include="Resources\telephone_go.png" />
+    <None Include="Resources\telephone_error.png" />
+    <None Include="Resources\telephone_edit.png" />
+    <None Include="Resources\telephone_delete.png" />
+    <None Include="Resources\telephone_add.png" />
+    <None Include="Resources\telephone.png" />
+    <None Include="Resources\tags_red.png" />
+    <None Include="Resources\tags_grey.png" />
+    <None Include="Resources\tag_yellow.png" />
+    <None Include="Resources\tag_red.png" />
+    <None Include="Resources\tag_purple.png" />
+    <None Include="Resources\tag_pink.png" />
+    <None Include="Resources\tag_orange.png" />
+    <None Include="Resources\tag_green.png" />
+    <None Include="Resources\tag_blue_edit.png" />
+    <None Include="Resources\tag_blue_delete.png" />
+    <None Include="Resources\tag_blue_add.png" />
+    <None Include="Resources\tag_blue.png" />
+    <None Include="Resources\tag.png" />
+    <None Include="Resources\table_sort.png" />
+    <None Include="Resources\table_save.png" />
+    <None Include="Resources\table_row_insert.png" />
+    <None Include="Resources\table_row_delete.png" />
+    <None Include="Resources\table_row.png" />
+    <None Include="Resources\table_relationship.png" />
+    <None Include="Resources\table_refresh.png" />
+    <None Include="Resources\table_multiple.png" />
+    <None Include="Resources\table_link.png" />
+    <None Include="Resources\table_lightning.png" />
+    <None Include="Resources\table_key.png" />
+    <None Include="Resources\table_go.png" />
+    <None Include="Resources\table_gear.png" />
+    <None Include="Resources\table_error.png" />
+    <None Include="Resources\table_edit.png" />
+    <None Include="Resources\table_delete.png" />
+    <None Include="Resources\table_connect.png" />
+    <None Include="Resources\table_column_delete.png" />
+    <None Include="Resources\table_column_add.png" />
+    <None Include="Resources\table_column.png" />
+    <None Include="Resources\table_cell.png" />
+    <None Include="Resources\table_add.png" />
+    <None Include="Resources\table.png" />
+    <None Include="Resources\tab_red.png" />
+    <None Include="Resources\tab_green.png" />
+    <None Include="Resources\tab_go.png" />
+    <None Include="Resources\tab_edit.png" />
+    <None Include="Resources\tab_delete.png" />
+    <None Include="Resources\tab_blue.png" />
+    <None Include="Resources\tab_add.png" />
+    <None Include="Resources\tab.png" />
+    <None Include="Resources\system_search.gif" />
+    <None Include="Resources\system_savenew.gif" />
+    <None Include="Resources\system_saveclose.gif" />
+    <None Include="Resources\system_save.gif" />
+    <None Include="Resources\system_new.gif" />
+    <None Include="Resources\system_close.gif" />
+    <None Include="Resources\sum.png" />
+    <None Include="Resources\style_go.png" />
+    <None Include="Resources\style_edit.png" />
+    <None Include="Resources\style_delete.png" />
+    <None Include="Resources\style_add.png" />
+    <None Include="Resources\style.png" />
+    <None Include="Resources\stop_red.png" />
+    <None Include="Resources\stop_green.png" />
+    <None Include="Resources\stop_blue.png" />
+    <None Include="Resources\stop.png" />
+    <None Include="Resources\status_online.png" />
+    <None Include="Resources\status_offline.png" />
+    <None Include="Resources\status_invisible.png" />
+    <None Include="Resources\status_busy.png" />
+    <None Include="Resources\status_be_right_back.png" />
+    <None Include="Resources\status_away.png" />
+    <None Include="Resources\star_silver.png" />
+    <None Include="Resources\star_half_grey.png" />
+    <None Include="Resources\star_grey.png" />
+    <None Include="Resources\star_gold_half_silver.png" />
+    <None Include="Resources\star_gold_half_grey.png" />
+    <None Include="Resources\star_gold.png" />
+    <None Include="Resources\star_bronze_half_grey.png" />
+    <None Include="Resources\star_bronze.png" />
+    <None Include="Resources\star.png" />
+    <None Include="Resources\sport_tennis.png" />
+    <None Include="Resources\sport_soccer.png" />
+    <None Include="Resources\sport_shuttlecock.png" />
+    <None Include="Resources\sport_raquet.png" />
+    <None Include="Resources\sport_golf_practice.png" />
+    <None Include="Resources\sport_golf.png" />
+    <None Include="Resources\sport_football.png" />
+    <None Include="Resources\sport_basketball.png" />
+    <None Include="Resources\sport_8ball.png" />
+    <None Include="Resources\spellcheck.png" />
+    <None Include="Resources\sound_out.png" />
+    <None Include="Resources\sound_none.png" />
+    <None Include="Resources\sound_mute.png" />
+    <None Include="Resources\sound_low.png" />
+    <None Include="Resources\sound_in.png" />
+    <None Include="Resources\sound_high.png" />
+    <None Include="Resources\sound_delete.png" />
+    <None Include="Resources\sound_add.png" />
+    <None Include="Resources\sound.png" />
+    <None Include="Resources\sort_descending.png" />
+    <None Include="Resources\sort_ascending.png" />
+    <None Include="Resources\smartphone_wrench.png" />
+    <None Include="Resources\smartphone_key.png" />
+    <None Include="Resources\smartphone_go.png" />
+    <None Include="Resources\smartphone_error.png" />
+    <None Include="Resources\smartphone_edit.png" />
+    <None Include="Resources\smartphone_disk.png" />
+    <None Include="Resources\smartphone_delete.png" />
+    <None Include="Resources\smartphone_connect.png" />
+    <None Include="Resources\smartphone_add.png" />
+    <None Include="Resources\smartphone.png" />
+    <None Include="Resources\sitemap_color.png" />
+    <None Include="Resources\sitemap.png" />
+    <None Include="Resources\shield_stop.png" />
+    <None Include="Resources\shield_start.png" />
+    <None Include="Resources\shield_silver.png" />
+    <None Include="Resources\shield_rainbow.png" />
+    <None Include="Resources\shield_go.png" />
+    <None Include="Resources\shield_error.png" />
+    <None Include="Resources\shield_delete.png" />
+    <None Include="Resources\shield_add.png" />
+    <None Include="Resources\shield.png" />
+    <None Include="Resources\share.png" />
+    <None Include="Resources\shapes_many_select.png" />
+    <None Include="Resources\shapes_many.png" />
+    <None Include="Resources\shape_ungroup.png" />
+    <None Include="Resources\shape_square_select.png" />
+    <None Include="Resources\shape_square_link.png" />
+    <None Include="Resources\shape_square_key.png" />
+    <None Include="Resources\shape_square_go.png" />
+    <None Include="Resources\shape_square_error.png" />
+    <None Include="Resources\shape_square_edit.png" />
+    <None Include="Resources\shape_square_delete.png" />
+    <None Include="Resources\shape_square_add.png" />
+    <None Include="Resources\shape_square.png" />
+    <None Include="Resources\shape_shadow_toggle.png" />
+    <None Include="Resources\shape_shadow.png" />
+    <None Include="Resources\shape_shade_c.png" />
+    <None Include="Resources\shape_shade_b.png" />
+    <None Include="Resources\shape_shade_a.png" />
+    <None Include="Resources\shape_rotate_clockwise.png" />
+    <None Include="Resources\shape_rotate_anticlockwise.png" />
+    <None Include="Resources\shape_move_front.png" />
+    <None Include="Resources\shape_move_forwards.png" />
+    <None Include="Resources\shape_move_backwards.png" />
+    <None Include="Resources\shape_move_back.png" />
+    <None Include="Resources\shape_handles.png" />
+    <None Include="Resources\shape_group.png" />
+    <None Include="Resources\shape_flip_vertical.png" />
+    <None Include="Resources\shape_flip_horizontal.png" />
+    <None Include="Resources\shape_align_top.png" />
+    <None Include="Resources\shape_align_right.png" />
+    <None Include="Resources\shape_align_middle.png" />
+    <None Include="Resources\shape_align_left.png" />
+    <None Include="Resources\shape_align_center.png" />
+    <None Include="Resources\shape_align_bottom.png" />
+    <None Include="Resources\shape_3d.png" />
+    <None Include="Resources\shading.png" />
+    <None Include="Resources\server_wrench.png" />
+    <None Include="Resources\server_uncompressed.png" />
+    <None Include="Resources\server_stop.png" />
+    <None Include="Resources\server_start.png" />
+    <None Include="Resources\server_link.png" />
+    <None Include="Resources\server_lightning.png" />
+    <None Include="Resources\server_key.png" />
+    <None Include="Resources\server_go.png" />
+    <None Include="Resources\server_error.png" />
+    <None Include="Resources\server_edit.png" />
+    <None Include="Resources\server_delete.png" />
+    <None Include="Resources\server_database.png" />
+    <None Include="Resources\server_connect.png" />
+    <None Include="Resources\server_compressed.png" />
+    <None Include="Resources\server_chart.png" />
+    <None Include="Resources\server_add.png" />
+    <None Include="Resources\server.png" />
+    <None Include="Resources\section_expanded.png" />
+    <None Include="Resources\section_collapsed.png" />
+    <None Include="Resources\seasons.png" />
+    <None Include="Resources\script_stop.png" />
+    <None Include="Resources\script_start.png" />
+    <None Include="Resources\script_save.png" />
+    <None Include="Resources\script_palette.png" />
+    <None Include="Resources\script_link.png" />
+    <None Include="Resources\script_lightning.png" />
+    <None Include="Resources\script_key.png" />
+    <None Include="Resources\script_go.png" />
+    <None Include="Resources\script_gear.png" />
+    <None Include="Resources\script_error.png" />
+    <None Include="Resources\script_edit.png" />
+    <None Include="Resources\script_delete.png" />
+    <None Include="Resources\script_code_red.png" />
+    <None Include="Resources\script_code_original.png" />
+    <None Include="Resources\script_code.png" />
+    <None Include="Resources\script_add.png" />
+    <None Include="Resources\script.png" />
+    <None Include="Resources\ruby_put.png" />
+    <None Include="Resources\ruby_link.png" />
+    <None Include="Resources\ruby_key.png" />
+    <None Include="Resources\ruby_go.png" />
+    <None Include="Resources\ruby_get.png" />
+    <None Include="Resources\ruby_gear.png" />
+    <None Include="Resources\ruby_delete.png" />
+    <None Include="Resources\ruby_add.png" />
+    <None Include="Resources\ruby.png" />
+    <None Include="Resources\rss_valid.png" />
+    <None Include="Resources\rss_go.png" />
+    <None Include="Resources\rss_error.png" />
+    <None Include="Resources\rss_delete.png" />
+    <None Include="Resources\rss_add.png" />
+    <None Include="Resources\rss.png" />
+    <None Include="Resources\rosette_blue.png" />
+    <None Include="Resources\rosette.png" />
+    <None Include="Resources\rgb.png" />
+    <None Include="Resources\rewind_green.png" />
+    <None Include="Resources\rewind_blue.png" />
+    <None Include="Resources\reverse_green.png" />
+    <None Include="Resources\reverse_blue.png" />
+    <None Include="Resources\resultset_previous.png" />
+    <None Include="Resources\resultset_next.png" />
+    <None Include="Resources\resultset_last.png" />
+    <None Include="Resources\resultset_first.png" />
+    <None Include="Resources\report_word.png" />
+    <None Include="Resources\report_user.png" />
+    <None Include="Resources\report_stop.png" />
+    <None Include="Resources\report_start.png" />
+    <None Include="Resources\report_picture.png" />
+    <None Include="Resources\report_magnify.png" />
+    <None Include="Resources\report_link.png" />
+    <None Include="Resources\report_key.png" />
+    <None Include="Resources\report_go.png" />
+    <None Include="Resources\report_edit.png" />
+    <None Include="Resources\report_disk.png" />
+    <None Include="Resources\report_delete.png" />
+    <None Include="Resources\report_add.png" />
+    <None Include="Resources\report.png" />
+    <None Include="Resources\reload.png" />
+    <None Include="Resources\record_red.png" />
+    <None Include="Resources\record_green.png" />
+    <None Include="Resources\record_blue.png" />
+    <None Include="Resources\rainbow_star.png" />
+    <None Include="Resources\rainbow.png" />
+    <None Include="Resources\printer_stop.png" />
+    <None Include="Resources\printer_start.png" />
+    <None Include="Resources\printer_mono.png" />
+    <None Include="Resources\printer_key.png" />
+    <None Include="Resources\printer_go.png" />
+    <None Include="Resources\printer_error.png" />
+    <None Include="Resources\printer_empty.png" />
+    <None Include="Resources\printer_delete.png" />
+    <None Include="Resources\printer_connect.png" />
+    <None Include="Resources\printer_color.png" />
+    <None Include="Resources\printer_cancel.png" />
+    <None Include="Resources\printer_add.png" />
+    <None Include="Resources\printer.png" />
+    <None Include="Resources\previous_green.png" />
+    <None Include="Resources\plugin_link.png" />
+    <None Include="Resources\plugin_key.png" />
+    <None Include="Resources\plugin_go.png" />
+    <None Include="Resources\plugin_error.png" />
+    <None Include="Resources\plugin_edit.png" />
+    <None Include="Resources\plugin_disabled.png" />
+    <None Include="Resources\plugin_delete.png" />
+    <None Include="Resources\plugin_add.png" />
+    <None Include="Resources\plugin.png" />
+    <None Include="Resources\play_green.png" />
+    <None Include="Resources\play_blue.png" />
+    <None Include="Resources\pill_go.png" />
+    <None Include="Resources\pill_error.png" />
+    <None Include="Resources\pill_delete.png" />
+    <None Include="Resources\pill_add.png" />
+    <None Include="Resources\pill.png" />
+    <None Include="Resources\pilcrow.png" />
+    <None Include="Resources\pictures_thumbs.png" />
+    <None Include="Resources\pictures.png" />
+    <None Include="Resources\picture_save.png" />
+    <None Include="Resources\picture_link.png" />
+    <None Include="Resources\picture_key.png" />
+    <None Include="Resources\picture_go.png" />
+    <None Include="Resources\picture_error.png" />
+    <None Include="Resources\picture_empty.png" />
+    <None Include="Resources\picture_edit.png" />
+    <None Include="Resources\picture_delete.png" />
+    <None Include="Resources\picture_clipboard.png" />
+    <None Include="Resources\picture_add.png" />
+    <None Include="Resources\picture.png" />
+    <None Include="Resources\photos.png" />
+    <None Include="Resources\photo_paint.png" />
+    <None Include="Resources\photo_link.png" />
+    <None Include="Resources\photo_edit.png" />
+    <None Include="Resources\photo_delete.png" />
+    <None Include="Resources\photo_add.png" />
+    <None Include="Resources\photo.png" />
+    <None Include="Resources\phone_stop.png" />
+    <None Include="Resources\phone_start.png" />
+    <None Include="Resources\phone_sound.png" />
+    <None Include="Resources\phone_link.png" />
+    <None Include="Resources\phone_key.png" />
+    <None Include="Resources\phone_go.png" />
+    <None Include="Resources\phone_error.png" />
+    <None Include="Resources\phone_edit.png" />
+    <None Include="Resources\phone_delete.png" />
+    <None Include="Resources\phone_add.png" />
+    <None Include="Resources\phone.png" />
+    <None Include="Resources\pencil_go.png" />
+    <None Include="Resources\pencil_delete.png" />
+    <None Include="Resources\pencil_add.png" />
+    <None Include="Resources\pencil.png" />
+    <None Include="Resources\pause_record.png" />
+    <None Include="Resources\pause_green.png" />
+    <None Include="Resources\pause_blue.png" />
+    <None Include="Resources\paste_word.png" />
+    <None Include="Resources\paste_plain.png" />
+    <None Include="Resources\palette.png" />
+    <None Include="Resources\paintcan_red.png" />
+    <None Include="Resources\paintcan.png" />
+    <None Include="Resources\paintbrush_color.png" />
+    <None Include="Resources\paintbrush.png" />
+    <None Include="Resources\paint_can_brush.png" />
+    <None Include="Resources\paint.png" />
+    <None Include="Resources\page_world.png" />
+    <None Include="Resources\page_word.png" />
+    <None Include="Resources\page_white_zip.png" />
+    <None Include="Resources\page_white_wrench.png" />
+    <None Include="Resources\page_white_world.png" />
+    <None Include="Resources\page_white_word.png" />
+    <None Include="Resources\page_white_width.png" />
+    <None Include="Resources\page_white_visualstudio.png" />
+    <None Include="Resources\page_white_vector.png" />
+    <None Include="Resources\page_white_tux.png" />
+    <None Include="Resources\page_white_text_width.png" />
+    <None Include="Resources\page_white_text.png" />
+    <None Include="Resources\page_white_swoosh.png" />
+    <None Include="Resources\page_white_star.png" />
+    <None Include="Resources\page_white_stack.png" />
+    <None Include="Resources\page_white_side_by_side.png" />
+    <None Include="Resources\page_white_ruby.png" />
+    <None Include="Resources\page_white_refresh.png" />
+    <None Include="Resources\page_white_put.png" />
+    <None Include="Resources\page_white_powerpoint.png" />
+    <None Include="Resources\page_white_picture.png" />
+    <None Include="Resources\page_white_php.png" />
+    <None Include="Resources\page_white_paste_table.png" />
+    <None Include="Resources\page_white_paste.png" />
+    <None Include="Resources\page_white_paintbrush.png" />
+    <None Include="Resources\page_white_paint_2.png" />
+    <None Include="Resources\page_white_paint.png" />
+    <None Include="Resources\page_white_office.png" />
+    <None Include="Resources\page_white_medal.png" />
+    <None Include="Resources\page_white_magnify.png" />
+    <None Include="Resources\page_white_link.png" />
+    <None Include="Resources\page_white_lightning.png" />
+    <None Include="Resources\page_white_key.png" />
+    <None Include="Resources\page_white_horizontal.png" />
+    <None Include="Resources\page_white_h.png" />
+    <None Include="Resources\page_white_go.png" />
+    <None Include="Resources\page_white_get.png" />
+    <None Include="Resources\page_white_gear.png" />
+    <None Include="Resources\page_white_freehand.png" />
+    <None Include="Resources\page_white_font.png" />
+    <None Include="Resources\page_white_flash.png" />
+    <None Include="Resources\page_white_find.png" />
+    <None Include="Resources\page_white_excel.png" />
+    <None Include="Resources\page_white_error.png" />
+    <None Include="Resources\page_white_edit.png" />
+    <None Include="Resources\page_white_dvd.png" />
+    <None Include="Resources\page_white_delete.png" />
+    <None Include="Resources\page_white_database_yellow.png" />
+    <None Include="Resources\page_white_database.png" />
+    <None Include="Resources\page_white_cup.png" />
+    <None Include="Resources\page_white_csharp.png" />
+    <None Include="Resources\page_white_cplusplus.png" />
+    <None Include="Resources\page_white_copy.png" />
+    <None Include="Resources\page_white_connect.png" />
+    <None Include="Resources\page_white_compressed.png" />
+    <None Include="Resources\page_white_coldfusion.png" />
+    <None Include="Resources\page_white_code_red.png" />
+    <None Include="Resources\page_white_code.png" />
+    <None Include="Resources\page_white_cdr.png" />
+    <None Include="Resources\page_white_cd.png" />
+    <None Include="Resources\page_white_camera.png" />
+    <None Include="Resources\page_white_c.png" />
+    <None Include="Resources\page_white_break.png" />
+    <None Include="Resources\page_white_add.png" />
+    <None Include="Resources\page_white_actionscript.png" />
+    <None Include="Resources\page_white_acrobat.png" />
+    <None Include="Resources\page_white.png" />
+    <None Include="Resources\page_save.png" />
+    <None Include="Resources\page_refresh.png" />
+    <None Include="Resources\page_red.png" />
+    <None Include="Resources\page_portrait_shot.png" />
+    <None Include="Resources\page_portrait.png" />
+    <None Include="Resources\page_paste.png" />
+    <None Include="Resources\page_paintbrush.png" />
+    <None Include="Resources\page_magnify.png" />
+    <None Include="Resources\page_link.png" />
+    <None Include="Resources\page_lightning.png" />
+    <None Include="Resources\page_landscape_shot.png" />
+    <None Include="Resources\page_landscape.png" />
+    <None Include="Resources\page_key.png" />
+    <None Include="Resources\page_header_footer.png" />
+    <None Include="Resources\page_green.png" />
+    <None Include="Resources\page_go.png" />
+    <None Include="Resources\page_gear.png" />
+    <None Include="Resources\page_forward.png" />
+    <None Include="Resources\page_find.png" />
+    <None Include="Resources\page_excel.png" />
+    <None Include="Resources\page_error.png" />
+    <None Include="Resources\page_edit.png" />
+    <None Include="Resources\page_delete.png" />
+    <None Include="Resources\page_copy.png" />
+    <None Include="Resources\page_code.png" />
+    <None Include="Resources\page_cancel.png" />
+    <None Include="Resources\page_break_insert.png" />
+    <None Include="Resources\page_break.png" />
+    <None Include="Resources\page_back.png" />
+    <None Include="Resources\page_attach.png" />
+    <None Include="Resources\page_add.png" />
+    <None Include="Resources\page.png" />
+    <None Include="Resources\package_white.png" />
+    <None Include="Resources\package_stop.png" />
+    <None Include="Resources\package_start.png" />
+    <None Include="Resources\package_se.png" />
+    <None Include="Resources\package_link.png" />
+    <None Include="Resources\package_in.png" />
+    <None Include="Resources\package_green.png" />
+    <None Include="Resources\package_go.png" />
+    <None Include="Resources\package_down.png" />
+    <None Include="Resources\package_delete.png" />
+    <None Include="Resources\package_add.png" />
+    <None Include="Resources\package.png" />
+    <None Include="Resources\overlays.png" />
+    <None Include="Resources\outline.png" />
+    <None Include="Resources\note_go.png" />
+    <None Include="Resources\note_error.png" />
+    <None Include="Resources\note_edit.png" />
+    <None Include="Resources\note_delete.png" />
+    <None Include="Resources\note_add.png" />
+    <None Include="Resources\note.png" />
+    <None Include="Resources\next_green.png" />
+    <None Include="Resources\next_blue.png" />
+    <None Include="Resources\newspaper_link.png" />
+    <None Include="Resources\newspaper_go.png" />
+    <None Include="Resources\newspaper_delete.png" />
+    <None Include="Resources\newspaper_add.png" />
+    <None Include="Resources\newspaper.png" />
+    <None Include="Resources\new_red.png" />
+    <None Include="Resources\new_blue.png" />
+    <None Include="Resources\new.png" />
+    <None Include="Resources\neighbourhood.png" />
+    <None Include="Resources\music_note.png" />
+    <None Include="Resources\music.png" />
+    <None Include="Resources\mouse_error.png" />
+    <None Include="Resources\mouse_delete.png" />
+    <None Include="Resources\mouse_add.png" />
+    <None Include="Resources\mouse.png" />
+    <None Include="Resources\moon_full.png" />
+    <None Include="Resources\monitor_link.png" />
+    <None Include="Resources\monitor_lightning.png" />
+    <None Include="Resources\monitor_key.png" />
+    <None Include="Resources\monitor_go.png" />
+    <None Include="Resources\monitor_error.png" />
+    <None Include="Resources\monitor_edit.png" />
+    <None Include="Resources\monitor_delete.png" />
+    <None Include="Resources\monitor_add.png" />
+    <None Include="Resources\monitor.png" />
+    <None Include="Resources\money_yen.png" />
+    <None Include="Resources\money_pound.png" />
+    <None Include="Resources\money_euro.png" />
+    <None Include="Resources\money_dollar.png" />
+    <None Include="Resources\money_delete.png" />
+    <None Include="Resources\money_add.png" />
+    <None Include="Resources\money.png" />
+    <None Include="Resources\medal_silver_delete.png" />
+    <None Include="Resources\medal_silver_add.png" />
+    <None Include="Resources\medal_silver_3.png" />
+    <None Include="Resources\medal_silver_2.png" />
+    <None Include="Resources\medal_silver_1.png" />
+    <None Include="Resources\medal_gold_delete.png" />
+    <None Include="Resources\medal_gold_add.png" />
+    <None Include="Resources\medal_gold_3.png" />
+    <None Include="Resources\medal_gold_2.png" />
+    <None Include="Resources\medal_gold_1.png" />
+    <None Include="Resources\medal_bronze_delete.png" />
+    <None Include="Resources\medal_bronze_add.png" />
+    <None Include="Resources\medal_bronze_3.png" />
+    <None Include="Resources\medal_bronze_2.png" />
+    <None Include="Resources\medal_bronze_1.png" />
+    <None Include="Resources\map_stop.png" />
+    <None Include="Resources\map_start.png" />
+    <None Include="Resources\map_magnify.png" />
+    <None Include="Resources\map_link.png" />
+    <None Include="Resources\map_go.png" />
+    <None Include="Resources\map_error.png" />
+    <None Include="Resources\map_edit.png" />
+    <None Include="Resources\map_delete.png" />
+    <None Include="Resources\map_cursor.png" />
+    <None Include="Resources\map_clipboard.png" />
+    <None Include="Resources\map_add.png" />
+    <None Include="Resources\map.png" />
+    <None Include="Resources\male.png" />
+    <None Include="Resources\mail.png" />
+    <None Include="Resources\magnifier_zoom_in.png" />
+    <None Include="Resources\magnifier.png" />
+    <None Include="Resources\magifier_zoom_out.png" />
+    <None Include="Resources\lorry_stop.png" />
+    <None Include="Resources\lorry_start.png" />
+    <None Include="Resources\lorry_link.png" />
+    <None Include="Resources\lorry_go.png" />
+    <None Include="Resources\lorry_flatbed.png" />
+    <None Include="Resources\lorry_error.png" />
+    <None Include="Resources\lorry_delete.png" />
+    <None Include="Resources\lorry_add.png" />
+    <None Include="Resources\lorry.png" />
+    <None Include="Resources\lock_stop.png" />
+    <None Include="Resources\lock_start.png" />
+    <None Include="Resources\lock_open.png" />
+    <None Include="Resources\lock_key.png" />
+    <None Include="Resources\lock_go.png" />
+    <None Include="Resources\lock_edit.png" />
+    <None Include="Resources\lock_delete.png" />
+    <None Include="Resources\lock_break.png" />
+    <None Include="Resources\lock_add.png" />
+    <None Include="Resources\lock.png" />
+    <None Include="Resources\link_go.png" />
+    <None Include="Resources\link_error.png" />
+    <None Include="Resources\link_edit.png" />
+    <None Include="Resources\link_delete.png" />
+    <None Include="Resources\link_break.png" />
+    <None Include="Resources\link_add.png" />
+    <None Include="Resources\link.png" />
+    <None Include="Resources\lightning_go.png" />
+    <None Include="Resources\lightning_delete.png" />
+    <None Include="Resources\lightning_add.png" />
+    <None Include="Resources\lightning.png" />
+    <None Include="Resources\lightbulb_off.png" />
+    <None Include="Resources\lightbulb_delete.png" />
+    <None Include="Resources\lightbulb_add.png" />
+    <None Include="Resources\lightbulb.png" />
+    <None Include="Resources\layout_sidebar.png" />
+    <None Include="Resources\layout_link.png" />
+    <None Include="Resources\layout_lightning.png" />
+    <None Include="Resources\layout_key.png" />
+    <None Include="Resources\layout_header.png" />
+    <None Include="Resources\layout_error.png" />
+    <None Include="Resources\layout_edit.png" />
+    <None Include="Resources\layout_delete.png" />
+    <None Include="Resources\layout_content.png" />
+    <None Include="Resources\layout_add.png" />
+    <None Include="Resources\layout.png" />
+    <None Include="Resources\layers.png" />
+    <None Include="Resources\laptop_wrench.png" />
+    <None Include="Resources\laptop_stop.png" />
+    <None Include="Resources\laptop_start.png" />
+    <None Include="Resources\laptop_magnify.png" />
+    <None Include="Resources\laptop_link.png" />
+    <None Include="Resources\laptop_key.png" />
+    <None Include="Resources\laptop_go.png" />
+    <None Include="Resources\laptop_error.png" />
+    <None Include="Resources\laptop_edit.png" />
+    <None Include="Resources\laptop_disk.png" />
+    <None Include="Resources\laptop_delete.png" />
+    <None Include="Resources\laptop_connect.png" />
+    <None Include="Resources\laptop_add.png" />
+    <None Include="Resources\laptop.png" />
+    <None Include="Resources\keyboard_magnify.png" />
+    <None Include="Resources\keyboard_delete.png" />
+    <None Include="Resources\keyboard_connect.png" />
+    <None Include="Resources\keyboard_add.png" />
+    <None Include="Resources\keyboard.png" />
+    <None Include="Resources\key_stop.png" />
+    <None Include="Resources\key_start.png" />
+    <None Include="Resources\key_go.png" />
+    <None Include="Resources\key_delete.png" />
+    <None Include="Resources\key_add.png" />
+    <None Include="Resources\key.png" />
+    <None Include="Resources\joystick_error.png" />
+    <None Include="Resources\joystick_delete.png" />
+    <None Include="Resources\joystick_connect.png" />
+    <None Include="Resources\joystick_add.png" />
+    <None Include="Resources\joystick.png" />
+    <None Include="Resources\ipod_sound.png" />
+    <None Include="Resources\ipod_nano_connect.png" />
+    <None Include="Resources\ipod_nano.png" />
+    <None Include="Resources\ipod_connect.png" />
+    <None Include="Resources\ipod_cast_delete.png" />
+    <None Include="Resources\ipod_cast_add.png" />
+    <None Include="Resources\ipod_cast.png" />
+    <None Include="Resources\ipod.png" />
+    <None Include="Resources\information.png" />
+    <None Include="Resources\images.png" />
+    <None Include="Resources\image_star.png" />
+    <None Include="Resources\image_magnify.png" />
+    <None Include="Resources\image_link.png" />
+    <None Include="Resources\image_edit.png" />
+    <None Include="Resources\image_delete.png" />
+    <None Include="Resources\image_add.png" />
+    <None Include="Resources\image.png" />
+    <None Include="Resources\html_valid.png" />
+    <None Include="Resources\html_go.png" />
+    <None Include="Resources\html_error.png" />
+    <None Include="Resources\html_delete.png" />
+    <None Include="Resources\html_add.png" />
+    <None Include="Resources\html.png" />
+    <None Include="Resources\house_star.png" />
+    <None Include="Resources\house_link.png" />
+    <None Include="Resources\house_key.png" />
+    <None Include="Resources\house_go.png" />
+    <None Include="Resources\house_connect.png" />
+    <None Include="Resources\house.png" />
+    <None Include="Resources\hourglass_link.png" />
+    <None Include="Resources\hourglass_go.png" />
+    <None Include="Resources\hourglass_delete.png" />
+    <None Include="Resources\hourglass_add.png" />
+    <None Include="Resources\hourglass.png" />
+    <None Include="Resources\HotBtnBack.jpg" />
+    <None Include="Resources\help.png" />
+    <None Include="Resources\heart_delete.png" />
+    <None Include="Resources\heart_connect.png" />
+    <None Include="Resources\heart_broken.png" />
+    <None Include="Resources\heart_add.png" />
+    <None Include="Resources\heart.png" />
+    <None Include="Resources\group_link.png" />
+    <None Include="Resources\group_key.png" />
+    <None Include="Resources\group_go.png" />
+    <None Include="Resources\group_gear.png" />
+    <None Include="Resources\group_error.png" />
+    <None Include="Resources\group_edit.png" />
+    <None Include="Resources\group_delete.png" />
+    <None Include="Resources\group_add.png" />
+    <None Include="Resources\group.png" />
+    <None Include="Resources\forward_green.png" />
+    <None Include="Resources\forward_blue.png" />
+    <None Include="Resources\font_smaller.png" />
+    <None Include="Resources\font_larger.png" />
+    <None Include="Resources\font_go.png" />
+    <None Include="Resources\font_delete.png" />
+    <None Include="Resources\font_color.png" />
+    <None Include="Resources\font_add.png" />
+    <None Include="Resources\font.png" />
+    <None Include="Resources\folder_wrench.png" />
+    <None Include="Resources\folder_user.png" />
+    <None Include="Resources\folder_up.png" />
+    <None Include="Resources\folder_table.png" />
+    <None Include="Resources\folder_star.png" />
+    <None Include="Resources\folder_picture.png" />
+    <None Include="Resources\folder_palette.png" />
+    <None Include="Resources\folder_page_white.png" />
+    <None Include="Resources\folder_page.png" />
+    <None Include="Resources\folder_magnify.png" />
+    <None Include="Resources\folder_link.png" />
+    <None Include="Resources\folder_lightbulb.png" />
+    <None Include="Resources\folder_key.png" />
+    <None Include="Resources\folder_image.png" />
+    <None Include="Resources\folder_home.png" />
+    <None Include="Resources\folder_heart.png" />
+    <None Include="Resources\folder_go.png" />
+    <None Include="Resources\folder_font.png" />
+    <None Include="Resources\folder_find.png" />
+    <None Include="Resources\folder_film.png" />
+    <None Include="Resources\folder_feed.png" />
+    <None Include="Resources\folder_explore.png" />
+    <None Include="Resources\folder_error.png" />
+    <None Include="Resources\folder_edit.png" />
+    <None Include="Resources\folder_delete.png" />
+    <None Include="Resources\folder_database.png" />
+    <None Include="Resources\folder_connect.png" />
+    <None Include="Resources\folder_camera.png" />
+    <None Include="Resources\folder_bug.png" />
+    <None Include="Resources\folder_brick.png" />
+    <None Include="Resources\folder_bookmark.png" />
+    <None Include="Resources\folder_bell.png" />
+    <None Include="Resources\folder_add.png" />
+    <None Include="Resources\folder.png" />
+    <None Include="Resources\flower_daisy.png" />
+    <None Include="Resources\flag_zw.png" />
+    <None Include="Resources\flag_zm.png" />
+    <None Include="Resources\flag_za.png" />
+    <None Include="Resources\flag_yt.png" />
+    <None Include="Resources\flag_yellow.png" />
+    <None Include="Resources\flag_ye.png" />
+    <None Include="Resources\flag_ws.png" />
+    <None Include="Resources\flag_white.png" />
+    <None Include="Resources\flag_wf.png" />
+    <None Include="Resources\flag_wales.png" />
+    <None Include="Resources\flag_vu.png" />
+    <None Include="Resources\flag_vn.png" />
+    <None Include="Resources\flag_vi.png" />
+    <None Include="Resources\flag_vg.png" />
+    <None Include="Resources\flag_ve.png" />
+    <None Include="Resources\flag_vc.png" />
+    <None Include="Resources\flag_va.png" />
+    <None Include="Resources\flag_uz.png" />
+    <None Include="Resources\flag_uy.png" />
+    <None Include="Resources\flag_us.png" />
+    <None Include="Resources\flag_um.png" />
+    <None Include="Resources\flag_ug.png" />
+    <None Include="Resources\flag_ua.png" />
+    <None Include="Resources\flag_tz.png" />
+    <None Include="Resources\flag_tw.png" />
+    <None Include="Resources\flag_tv.png" />
+    <None Include="Resources\flag_tt.png" />
+    <None Include="Resources\flag_tr.png" />
+    <None Include="Resources\flag_to.png" />
+    <None Include="Resources\flag_tn.png" />
+    <None Include="Resources\flag_tm.png" />
+    <None Include="Resources\flag_tl.png" />
+    <None Include="Resources\flag_tk.png" />
+    <None Include="Resources\flag_tj.png" />
+    <None Include="Resources\flag_th.png" />
+    <None Include="Resources\flag_tg.png" />
+    <None Include="Resources\flag_tf.png" />
+    <None Include="Resources\flag_td.png" />
+    <None Include="Resources\flag_tc.png" />
+    <None Include="Resources\flag_sz.png" />
+    <None Include="Resources\flag_sy.png" />
+    <None Include="Resources\flag_sv.png" />
+    <None Include="Resources\flag_st.png" />
+    <None Include="Resources\flag_sr.png" />
+    <None Include="Resources\flag_so.png" />
+    <None Include="Resources\flag_sn.png" />
+    <None Include="Resources\flag_sm.png" />
+    <None Include="Resources\flag_sl.png" />
+    <None Include="Resources\flag_sk.png" />
+    <None Include="Resources\flag_sj.png" />
+    <None Include="Resources\flag_si.png" />
+    <None Include="Resources\flag_sh.png" />
+    <None Include="Resources\flag_sg.png" />
+    <None Include="Resources\flag_se.png" />
+    <None Include="Resources\flag_sd.png" />
+    <None Include="Resources\flag_scotland.png" />
+    <None Include="Resources\flag_sc.png" />
+    <None Include="Resources\flag_sb.png" />
+    <None Include="Resources\flag_sa.png" />
+    <None Include="Resources\flag_rw.png" />
+    <None Include="Resources\flag_ru.png" />
+    <None Include="Resources\flag_rs.png" />
+    <None Include="Resources\flag_ro.png" />
+    <None Include="Resources\flag_red.png" />
+    <None Include="Resources\flag_re.png" />
+    <None Include="Resources\flag_qa.png" />
+    <None Include="Resources\flag_py.png" />
+    <None Include="Resources\flag_pw.png" />
+    <None Include="Resources\flag_purple.png" />
+    <None Include="Resources\flag_pt.png" />
+    <None Include="Resources\flag_ps.png" />
+    <None Include="Resources\flag_pr.png" />
+    <None Include="Resources\flag_pn.png" />
+    <None Include="Resources\flag_pm.png" />
+    <None Include="Resources\flag_pl.png" />
+    <None Include="Resources\flag_pk.png" />
+    <None Include="Resources\flag_pink.png" />
+    <None Include="Resources\flag_ph.png" />
+    <None Include="Resources\flag_pg.png" />
+    <None Include="Resources\flag_pf.png" />
+    <None Include="Resources\flag_pe.png" />
+    <None Include="Resources\flag_pa.png" />
+    <None Include="Resources\flag_orange.png" />
+    <None Include="Resources\flag_om.png" />
+    <None Include="Resources\flag_nz.png" />
+    <None Include="Resources\flag_nu.png" />
+    <None Include="Resources\flag_nr.png" />
+    <None Include="Resources\flag_np.png" />
+    <None Include="Resources\flag_no.png" />
+    <None Include="Resources\flag_nl.png" />
+    <None Include="Resources\flag_ni.png" />
+    <None Include="Resources\flag_ng.png" />
+    <None Include="Resources\flag_nf.png" />
+    <None Include="Resources\flag_ne.png" />
+    <None Include="Resources\flag_nc.png" />
+    <None Include="Resources\flag_na.png" />
+    <None Include="Resources\flag_mz.png" />
+    <None Include="Resources\flag_my.png" />
+    <None Include="Resources\flag_mx.png" />
+    <None Include="Resources\flag_mw.png" />
+    <None Include="Resources\flag_mv.png" />
+    <None Include="Resources\flag_mu.png" />
+    <None Include="Resources\flag_mt.png" />
+    <None Include="Resources\flag_ms.png" />
+    <None Include="Resources\flag_mr.png" />
+    <None Include="Resources\flag_mq.png" />
+    <None Include="Resources\flag_mp.png" />
+    <None Include="Resources\flag_mo.png" />
+    <None Include="Resources\flag_mn.png" />
+    <None Include="Resources\flag_mm.png" />
+    <None Include="Resources\flag_ml.png" />
+    <None Include="Resources\flag_mk.png" />
+    <None Include="Resources\flag_mh.png" />
+    <None Include="Resources\flag_mg.png" />
+    <None Include="Resources\flag_me.png" />
+    <None Include="Resources\flag_md.png" />
+    <None Include="Resources\flag_mc.png" />
+    <None Include="Resources\flag_ma.png" />
+    <None Include="Resources\flag_ly.png" />
+    <None Include="Resources\flag_lv.png" />
+    <None Include="Resources\flag_lu.png" />
+    <None Include="Resources\flag_lt.png" />
+    <None Include="Resources\flag_ls.png" />
+    <None Include="Resources\flag_lr.png" />
+    <None Include="Resources\flag_lk.png" />
+    <None Include="Resources\flag_li.png" />
+    <None Include="Resources\flag_lc.png" />
+    <None Include="Resources\flag_lb.png" />
+    <None Include="Resources\flag_la.png" />
+    <None Include="Resources\flag_kz.png" />
+    <None Include="Resources\flag_ky.png" />
+    <None Include="Resources\flag_kw.png" />
+    <None Include="Resources\flag_kr.png" />
+    <None Include="Resources\flag_kp.png" />
+    <None Include="Resources\flag_kn.png" />
+    <None Include="Resources\flag_km.png" />
+    <None Include="Resources\flag_ki.png" />
+    <None Include="Resources\flag_kh.png" />
+    <None Include="Resources\flag_kg.png" />
+    <None Include="Resources\flag_ke.png" />
+    <None Include="Resources\flag_jp.png" />
+    <None Include="Resources\flag_jo.png" />
+    <None Include="Resources\flag_jm.png" />
+    <None Include="Resources\flag_it.png" />
+    <None Include="Resources\flag_is.png" />
+    <None Include="Resources\flag_ir.png" />
+    <None Include="Resources\flag_iq.png" />
+    <None Include="Resources\flag_io.png" />
+    <None Include="Resources\flag_in.png" />
+    <None Include="Resources\flag_il.png" />
+    <None Include="Resources\flag_ie.png" />
+    <None Include="Resources\flag_id.png" />
+    <None Include="Resources\flag_hu.png" />
+    <None Include="Resources\flag_ht.png" />
+    <None Include="Resources\flag_hr.png" />
+    <None Include="Resources\flag_hn.png" />
+    <None Include="Resources\flag_hm.png" />
+    <None Include="Resources\flag_hk.png" />
+    <None Include="Resources\flag_gy.png" />
+    <None Include="Resources\flag_gw.png" />
+    <None Include="Resources\flag_gu.png" />
+    <None Include="Resources\flag_gt.png" />
+    <None Include="Resources\flag_gs.png" />
+    <None Include="Resources\flag_grey.png" />
+    <None Include="Resources\flag_green.png" />
+    <None Include="Resources\flag_gr.png" />
+    <None Include="Resources\flag_gq.png" />
+    <None Include="Resources\flag_gp.png" />
+    <None Include="Resources\flag_gn.png" />
+    <None Include="Resources\flag_gm.png" />
+    <None Include="Resources\flag_gl.png" />
+    <None Include="Resources\flag_gi.png" />
+    <None Include="Resources\flag_gh.png" />
+    <None Include="Resources\flag_gg.png" />
+    <None Include="Resources\flag_gf.png" />
+    <None Include="Resources\flag_ge.png" />
+    <None Include="Resources\flag_gd.png" />
+    <None Include="Resources\flag_gb.png" />
+    <None Include="Resources\flag_ga.png" />
+    <None Include="Resources\flag_france.png" />
+    <None Include="Resources\flag_fr.png" />
+    <None Include="Resources\flag_fo.png" />
+    <None Include="Resources\flag_fm.png" />
+    <None Include="Resources\flag_fk.png" />
+    <None Include="Resources\flag_fj.png" />
+    <None Include="Resources\flag_fi.png" />
+    <None Include="Resources\flag_fam.png" />
+    <None Include="Resources\flag_europeanunion.png" />
+    <None Include="Resources\flag_et.png" />
+    <None Include="Resources\flag_es.png" />
+    <None Include="Resources\flag_er.png" />
+    <None Include="Resources\flag_england.png" />
+    <None Include="Resources\flag_eh.png" />
+    <None Include="Resources\flag_eg.png" />
+    <None Include="Resources\flag_ee.png" />
+    <None Include="Resources\flag_ec.png" />
+    <None Include="Resources\flag_dz.png" />
+    <None Include="Resources\flag_do.png" />
+    <None Include="Resources\flag_dm.png" />
+    <None Include="Resources\flag_dk.png" />
+    <None Include="Resources\flag_dj.png" />
+    <None Include="Resources\flag_de.png" />
+    <None Include="Resources\flag_cz.png" />
+    <None Include="Resources\flag_cy.png" />
+    <None Include="Resources\flag_cx.png" />
+    <None Include="Resources\flag_cv.png" />
+    <None Include="Resources\flag_cu.png" />
+    <None Include="Resources\flag_cs.png" />
+    <None Include="Resources\flag_cr.png" />
+    <None Include="Resources\flag_co.png" />
+    <None Include="Resources\flag_cn.png" />
+    <None Include="Resources\flag_cm.png" />
+    <None Include="Resources\flag_cl.png" />
+    <None Include="Resources\flag_ck.png" />
+    <None Include="Resources\flag_ci.png" />
+    <None Include="Resources\flag_checked.png" />
+    <None Include="Resources\flag_ch.png" />
+    <None Include="Resources\flag_cg.png" />
+    <None Include="Resources\flag_cf.png" />
+    <None Include="Resources\flag_cd.png" />
+    <None Include="Resources\flag_cc.png" />
+    <None Include="Resources\flag_catalonia.png" />
+    <None Include="Resources\flag_ca.png" />
+    <None Include="Resources\flag_bz.png" />
+    <None Include="Resources\flag_by.png" />
+    <None Include="Resources\flag_bw.png" />
+    <None Include="Resources\flag_bv.png" />
+    <None Include="Resources\flag_bt.png" />
+    <None Include="Resources\flag_bs.png" />
+    <None Include="Resources\flag_br.png" />
+    <None Include="Resources\flag_bo.png" />
+    <None Include="Resources\flag_bn.png" />
+    <None Include="Resources\flag_bm.png" />
+    <None Include="Resources\flag_blue.png" />
+    <None Include="Resources\flag_black.png" />
+    <None Include="Resources\flag_bj.png" />
+    <None Include="Resources\flag_bi.png" />
+    <None Include="Resources\flag_bh.png" />
+    <None Include="Resources\flag_bg.png" />
+    <None Include="Resources\flag_bf.png" />
+    <None Include="Resources\flag_be.png" />
+    <None Include="Resources\flag_bd.png" />
+    <None Include="Resources\flag_bb.png" />
+    <None Include="Resources\flag_ba.png" />
+    <None Include="Resources\flag_az.png" />
+    <None Include="Resources\flag_ax.png" />
+    <None Include="Resources\flag_aw.png" />
+    <None Include="Resources\flag_au.png" />
+    <None Include="Resources\flag_at.png" />
+    <None Include="Resources\flag_as.png" />
+    <None Include="Resources\flag_ar.png" />
+    <None Include="Resources\flag_ao.png" />
+    <None Include="Resources\flag_an.png" />
+    <None Include="Resources\flag_am.png" />
+    <None Include="Resources\flag_al.png" />
+    <None Include="Resources\flag_ai.png" />
+    <None Include="Resources\flag_ag.png" />
+    <None Include="Resources\flag_af.png" />
+    <None Include="Resources\flag_ae.png" />
+    <None Include="Resources\flag_ad.png" />
+    <None Include="Resources\finger_point.png" />
+    <None Include="Resources\find.png" />
+    <None Include="Resources\film_stop.png" />
+    <None Include="Resources\film_start.png" />
+    <None Include="Resources\film_star.png" />
+    <None Include="Resources\film_save.png" />
+    <None Include="Resources\film_magnify.png" />
+    <None Include="Resources\film_link.png" />
+    <None Include="Resources\film_key.png" />
+    <None Include="Resources\film_go.png" />
+    <None Include="Resources\film_error.png" />
+    <None Include="Resources\film_eject.png" />
+    <None Include="Resources\film_edit.png" />
+    <None Include="Resources\film_delete.png" />
+    <None Include="Resources\film_add.png" />
+    <None Include="Resources\film.png" />
+    <None Include="Resources\female.png" />
+    <None Include="Resources\feed_star.png" />
+    <None Include="Resources\feed_magnify.png" />
+    <None Include="Resources\feed_link.png" />
+    <None Include="Resources\feed_key.png" />
+    <None Include="Resources\feed_go.png" />
+    <None Include="Resources\feed_error.png" />
+    <None Include="Resources\feed_edit.png" />
+    <None Include="Resources\feed_disk.png" />
+    <None Include="Resources\feed_delete.png" />
+    <None Include="Resources\feed_add.png" />
+    <None Include="Resources\feed.png" />
+    <None Include="Resources\eyes.png" />
+    <None Include="Resources\eye.png" />
+    <None Include="Resources\exclamation.png" />
+    <None Include="Resources\error_go.png" />
+    <None Include="Resources\error_delete.png" />
+    <None Include="Resources\error_add.png" />
+    <None Include="Resources\error.png" />
+    <None Include="Resources\erase.png" />
+    <None Include="Resources\emoticon_wink.png" />
+    <None Include="Resources\emoticon_waii.png" />
+    <None Include="Resources\emoticon_unhappy.png" />
+    <None Include="Resources\emoticon_tongue.png" />
+    <None Include="Resources\emoticon_surprised.png" />
+    <None Include="Resources\emoticon_smile.png" />
+    <None Include="Resources\emoticon_happy.png" />
+    <None Include="Resources\emoticon_grin.png" />
+    <None Include="Resources\emoticon_evilgrin.png" />
+    <None Include="Resources\email_transfer.png" />
+    <None Include="Resources\email_stop.png" />
+    <None Include="Resources\email_start.png" />
+    <None Include="Resources\email_star.png" />
+    <None Include="Resources\email_open_image.png" />
+    <None Include="Resources\email_open.png" />
+    <None Include="Resources\email_magnify.png" />
+    <None Include="Resources\email_link.png" />
+    <None Include="Resources\email_go.png" />
+    <None Include="Resources\email_error.png" />
+    <None Include="Resources\email_edit.png" />
+    <None Include="Resources\email_delete.png" />
+    <None Include="Resources\email_attach.png" />
+    <None Include="Resources\email_add.png" />
+    <None Include="Resources\email.png" />
+    <None Include="Resources\eject_green.png" />
+    <None Include="Resources\eject_blue.png" />
+    <None Include="Resources\dvd_stop.png" />
+    <None Include="Resources\dvd_start.png" />
+    <None Include="Resources\dvd_link.png" />
+    <None Include="Resources\dvd_key.png" />
+    <None Include="Resources\dvd_go.png" />
+    <None Include="Resources\dvd_error.png" />
+    <None Include="Resources\dvd_edit.png" />
+    <None Include="Resources\dvd_delete.png" />
+    <None Include="Resources\dvd_add.png" />
+    <None Include="Resources\dvd.png" />
+    <None Include="Resources\drive_web.png" />
+    <None Include="Resources\drive_user.png" />
+    <None Include="Resources\drive_rename.png" />
+    <None Include="Resources\drive_network_stop.png" />
+    <None Include="Resources\drive_network_error.png" />
+    <None Include="Resources\drive_network.png" />
+    <None Include="Resources\drive_magnify.png" />
+    <None Include="Resources\drive_link.png" />
+    <None Include="Resources\drive_key.png" />
+    <None Include="Resources\drive_go.png" />
+    <None Include="Resources\drive_error.png" />
+    <None Include="Resources\drive_edit.png" />
+    <None Include="Resources\drive_disk.png" />
+    <None Include="Resources\drive_delete.png" />
+    <None Include="Resources\drive_cdr.png" />
+    <None Include="Resources\drive_cd_empty.png" />
+    <None Include="Resources\drive_cd.png" />
+    <None Include="Resources\drive_burn.png" />
+    <None Include="Resources\drive_add.png" />
+    <None Include="Resources\drive.png" />
+    <None Include="Resources\drink_red.png" />
+    <None Include="Resources\drink_empty.png" />
+    <None Include="Resources\drink.png" />
+    <None Include="Resources\door_out.png" />
+    <None Include="Resources\door_open.png" />
+    <None Include="Resources\door_in.png" />
+    <None Include="Resources\door_error.png" />
+    <None Include="Resources\door.png" />
+    <None Include="Resources\disk_upload.png" />
+    <None Include="Resources\disk_multiple.png" />
+    <None Include="Resources\disk_magnify.png" />
+    <None Include="Resources\disk_error.png" />
+    <None Include="Resources\disk_edit.png" />
+    <None Include="Resources\disk_download.png" />
+    <None Include="Resources\disk_black_magnify.png" />
+    <None Include="Resources\disk_black_error.png" />
+    <None Include="Resources\disk_black.png" />
+    <None Include="Resources\disk.png" />
+    <None Include="Resources\disconnect.png" />
+    <None Include="Resources\device_stylus.png" />
+    <None Include="Resources\delete.png" />
+    <None Include="Resources\decline.png" />
+    <None Include="Resources\date_previous.png" />
+    <None Include="Resources\date_next.png" />
+    <None Include="Resources\date_magnify.png" />
+    <None Include="Resources\date_link.png" />
+    <None Include="Resources\date_go.png" />
+    <None Include="Resources\date_error.png" />
+    <None Include="Resources\date_edit.png" />
+    <None Include="Resources\date_delete.png" />
+    <None Include="Resources\date_add.png" />
+    <None Include="Resources\date.png" />
+    <None Include="Resources\database_yellow_stop.png" />
+    <None Include="Resources\database_yellow_start.png" />
+    <None Include="Resources\database_yellow.png" />
+    <None Include="Resources\database_wrench.png" />
+    <None Include="Resources\database_table.png" />
+    <None Include="Resources\database_stop.png" />
+    <None Include="Resources\database_start.png" />
+    <None Include="Resources\database_save.png" />
+    <None Include="Resources\database_refresh.png" />
+    <None Include="Resources\database_link.png" />
+    <None Include="Resources\database_lightning.png" />
+    <None Include="Resources\database_key.png" />
+    <None Include="Resources\database_go.png" />
+    <None Include="Resources\database_gear.png" />
+    <None Include="Resources\database_error.png" />
+    <None Include="Resources\database_edit.png" />
+    <None Include="Resources\database_delete.png" />
+    <None Include="Resources\database_copy.png" />
+    <None Include="Resources\database_connect.png" />
+    <None Include="Resources\database_add.png" />
+    <None Include="Resources\database.png" />
+    <None Include="Resources\cut_red.png" />
+    <None Include="Resources\cut.png" />
+    <None Include="Resources\cursor_small.png" />
+    <None Include="Resources\cursor.png" />
+    <None Include="Resources\cup_tea.png" />
+    <None Include="Resources\cup_link.png" />
+    <None Include="Resources\cup_key.png" />
+    <None Include="Resources\cup_green.png" />
+    <None Include="Resources\cup_go.png" />
+    <None Include="Resources\cup_error.png" />
+    <None Include="Resources\cup_edit.png" />
+    <None Include="Resources\cup_delete.png" />
+    <None Include="Resources\cup_black.png" />
+    <None Include="Resources\cup_add.png" />
+    <None Include="Resources\cup.png" />
+    <None Include="Resources\css_valid.png" />
+    <None Include="Resources\css_go.png" />
+    <None Include="Resources\css_error.png" />
+    <None Include="Resources\css_delete.png" />
+    <None Include="Resources\css_add.png" />
+    <None Include="Resources\css.png" />
+    <None Include="Resources\cross.png" />
+    <None Include="Resources\creditcards.png" />
+    <None Include="Resources\controller_error.png" />
+    <None Include="Resources\controller_delete.png" />
+    <None Include="Resources\controller_add.png" />
+    <None Include="Resources\controller.png" />
+    <None Include="Resources\control_stop_blue.png" />
+    <None Include="Resources\control_stop.png" />
+    <None Include="Resources\control_start_blue.png" />
+    <None Include="Resources\control_start.png" />
+    <None Include="Resources\control_rewind_blue.png" />
+    <None Include="Resources\control_rewind.png" />
+    <None Include="Resources\control_repeat_blue.png" />
+    <None Include="Resources\control_repeat.png" />
+    <None Include="Resources\control_remove_blue.png" />
+    <None Include="Resources\control_remove.png" />
+    <None Include="Resources\control_record_blue.png" />
+    <None Include="Resources\control_record.png" />
+    <None Include="Resources\control_power_blue.png" />
+    <None Include="Resources\control_power.png" />
+    <None Include="Resources\control_play_blue.png" />
+    <None Include="Resources\control_play.png" />
+    <None Include="Resources\control_pause_blue.png" />
+    <None Include="Resources\control_pause.png" />
+    <None Include="Resources\control_fastforward_blue.png" />
+    <None Include="Resources\control_fastforward.png" />
+    <None Include="Resources\control_equalizer_blue.png" />
+    <None Include="Resources\control_equalizer.png" />
+    <None Include="Resources\control_end_blue.png" />
+    <None Include="Resources\control_end.png" />
+    <None Include="Resources\control_eject_blue.png" />
+    <None Include="Resources\control_eject.png" />
+    <None Include="Resources\control_blank_blue.png" />
+    <None Include="Resources\control_blank.png" />
+    <None Include="Resources\control_add_blue.png" />
+    <None Include="Resources\control_add.png" />
+    <None Include="Resources\contrast_low.png" />
+    <None Include="Resources\contrast_increase.png" />
+    <None Include="Resources\contrast_high.png" />
+    <None Include="Resources\contrast_decrease.png" />
+    <None Include="Resources\contrast.png" />
+    <None Include="Resources\connect.png" />
+    <None Include="Resources\computer_wrench.png" />
+    <None Include="Resources\computer_stop.png" />
+    <None Include="Resources\computer_start.png" />
+    <None Include="Resources\computer_off.png" />
+    <None Include="Resources\computer_magnify.png" />
+    <None Include="Resources\computer_link.png" />
+    <None Include="Resources\computer_key.png" />
+    <None Include="Resources\computer_go.png" />
+    <None Include="Resources\computer_error.png" />
+    <None Include="Resources\computer_edit.png" />
+    <None Include="Resources\computer_delete.png" />
+    <None Include="Resources\computer_connect.png" />
+    <None Include="Resources\computer_add.png" />
+    <None Include="Resources\computer.png" />
+    <None Include="Resources\compress.png" />
+    <None Include="Resources\compass.png" />
+    <None Include="Resources\comments_delete.png" />
+    <None Include="Resources\comments_add.png" />
+    <None Include="Resources\comments.png" />
+    <None Include="Resources\comment_record.png" />
+    <None Include="Resources\comment_play.png" />
+    <None Include="Resources\comment_edit.png" />
+    <None Include="Resources\comment_dull.png" />
+    <None Include="Resources\comment_delete.png" />
+    <None Include="Resources\comment_add.png" />
+    <None Include="Resources\comment.png" />
+    <None Include="Resources\color_wheel.png" />
+    <None Include="Resources\color_swatch.png" />
+    <None Include="Resources\color.png" />
+    <None Include="Resources\coins_delete.png" />
+    <None Include="Resources\coins_add.png" />
+    <None Include="Resources\coins.png" />
+    <None Include="Resources\cog_stop.png" />
+    <None Include="Resources\cog_start.png" />
+    <None Include="Resources\cog_go.png" />
+    <None Include="Resources\cog_error.png" />
+    <None Include="Resources\cog_edit.png" />
+    <None Include="Resources\cog_delete.png" />
+    <None Include="Resources\cog_add.png" />
+    <None Include="Resources\cog.png" />
+    <None Include="Resources\cmy.png" />
+    <None Include="Resources\clock_stop_2.png" />
+    <None Include="Resources\clock_stop.png" />
+    <None Include="Resources\clock_start.png" />
+    <None Include="Resources\clock_red.png" />
+    <None Include="Resources\clock_play.png" />
+    <None Include="Resources\clock_pause.png" />
+    <None Include="Resources\clock_link.png" />
+    <None Include="Resources\clock_go.png" />
+    <None Include="Resources\clock_error.png" />
+    <None Include="Resources\clock_edit.png" />
+    <None Include="Resources\clock_delete.png" />
+    <None Include="Resources\clock_add.png" />
+    <None Include="Resources\clock.png" />
+    <None Include="Resources\clipboard.png" />
+    <None Include="Resources\check_error.png" />
+    <None Include="Resources\chart_pie_link.png" />
+    <None Include="Resources\chart_pie_lightning.png" />
+    <None Include="Resources\chart_pie_error.png" />
+    <None Include="Resources\chart_pie_edit.png" />
+    <None Include="Resources\chart_pie_delete.png" />
+    <None Include="Resources\chart_pie_add.png" />
+    <None Include="Resources\chart_pie.png" />
+    <None Include="Resources\chart_organisation_delete.png" />
+    <None Include="Resources\chart_organisation_add.png" />
+    <None Include="Resources\chart_organisation.png" />
+    <None Include="Resources\chart_org_inverted.png" />
+    <None Include="Resources\chart_line_link.png" />
+    <None Include="Resources\chart_line_error.png" />
+    <None Include="Resources\chart_line_edit.png" />
+    <None Include="Resources\chart_line_delete.png" />
+    <None Include="Resources\chart_line_add.png" />
+    <None Include="Resources\chart_line.png" />
+    <None Include="Resources\chart_curve_link.png" />
+    <None Include="Resources\chart_curve_go.png" />
+    <None Include="Resources\chart_curve_error.png" />
+    <None Include="Resources\chart_curve_edit.png" />
+    <None Include="Resources\chart_curve_delete.png" />
+    <None Include="Resources\chart_curve_add.png" />
+    <None Include="Resources\chart_curve.png" />
+    <None Include="Resources\chart_bar_link.png" />
+    <None Include="Resources\chart_bar_error.png" />
+    <None Include="Resources\chart_bar_edit.png" />
+    <None Include="Resources\chart_bar_delete.png" />
+    <None Include="Resources\chart_bar_add.png" />
+    <None Include="Resources\chart_bar.png" />
+    <None Include="Resources\cdr_tick.png" />
+    <None Include="Resources\cdr_stop_alt.png" />
+    <None Include="Resources\cdr_stop.png" />
+    <None Include="Resources\cdr_start.png" />
+    <None Include="Resources\cdr_play.png" />
+    <None Include="Resources\cdr_magnify.png" />
+    <None Include="Resources\cdr_go.png" />
+    <None Include="Resources\cdr_error.png" />
+    <None Include="Resources\cdr_eject.png" />
+    <None Include="Resources\cdr_edit.png" />
+    <None Include="Resources\cdr_delete.png" />
+    <None Include="Resources\cdr_cross.png" />
+    <None Include="Resources\cdr_burn.png" />
+    <None Include="Resources\cdr_add.png" />
+    <None Include="Resources\cdr.png" />
+    <None Include="Resources\cd_tick.png" />
+    <None Include="Resources\cd_stop_alt.png" />
+    <None Include="Resources\cd_stop.png" />
+    <None Include="Resources\cd_play.png" />
+    <None Include="Resources\cd_magnify.png" />
+    <None Include="Resources\cd_go.png" />
+    <None Include="Resources\cd_eject.png" />
+    <None Include="Resources\cd_edit.png" />
+    <None Include="Resources\cd_delete.png" />
+    <None Include="Resources\cd_burn.png" />
+    <None Include="Resources\cd_add.png" />
+    <None Include="Resources\cd.png" />
+    <None Include="Resources\cart_remove.png" />
+    <None Include="Resources\cart_put.png" />
+    <None Include="Resources\cart_magnify.png" />
+    <None Include="Resources\cart_go.png" />
+    <None Include="Resources\cart_full.png" />
+    <None Include="Resources\cart_error.png" />
+    <None Include="Resources\cart_edit.png" />
+    <None Include="Resources\cart_delete.png" />
+    <None Include="Resources\cart_add.png" />
+    <None Include="Resources\cart.png" />
+    <None Include="Resources\car_stop.png" />
+    <None Include="Resources\car_start.png" />
+    <None Include="Resources\car_red.png" />
+    <None Include="Resources\car_error.png" />
+    <None Include="Resources\car_delete.png" />
+    <None Include="Resources\car_add.png" />
+    <None Include="Resources\car.png" />
+    <None Include="Resources\cancel.png" />
+    <None Include="Resources\camera_stop.png" />
+    <None Include="Resources\camera_start.png" />
+    <None Include="Resources\camera_small.png" />
+    <None Include="Resources\camera_picture.png" />
+    <None Include="Resources\camera_magnify.png" />
+    <None Include="Resources\camera_link.png" />
+    <None Include="Resources\camera_go.png" />
+    <None Include="Resources\camera_error.png" />
+    <None Include="Resources\camera_edit.png" />
+    <None Include="Resources\camera_delete.png" />
+    <None Include="Resources\camera_connect.png" />
+    <None Include="Resources\camera_add.png" />
+    <None Include="Resources\camera.png" />
+    <None Include="Resources\calendar_view_week.png" />
+    <None Include="Resources\calendar_view_month.png" />
+    <None Include="Resources\calendar_view_day.png" />
+    <None Include="Resources\calendar_star.png" />
+    <None Include="Resources\calendar_select_week.png" />
+    <None Include="Resources\calendar_select_none.png" />
+    <None Include="Resources\calendar_select_day.png" />
+    <None Include="Resources\calendar_link.png" />
+    <None Include="Resources\calendar_edit.png" />
+    <None Include="Resources\calendar_delete.png" />
+    <None Include="Resources\calendar_add.png" />
+    <None Include="Resources\calendar.png" />
+    <None Include="Resources\calculator_link.png" />
+    <None Include="Resources\calculator_error.png" />
+    <None Include="Resources\calculator_edit.png" />
+    <None Include="Resources\calculator_delete.png" />
+    <None Include="Resources\calculator_add.png" />
+    <None Include="Resources\calculator.png" />
+    <None Include="Resources\cake_sliced.png" />
+    <None Include="Resources\cake_out.png" />
+    <None Include="Resources\cake.png" />
+    <None Include="Resources\button.png" />
+    <None Include="Resources\bullet_yellow.png" />
+    <None Include="Resources\bullet_wrench_red.png" />
+    <None Include="Resources\bullet_wrench.png" />
+    <None Include="Resources\bullet_white.png" />
+    <None Include="Resources\bullet_toggle_plus.png" />
+    <None Include="Resources\bullet_toggle_minus.png" />
+    <None Include="Resources\bullet_tick.png" />
+    <None Include="Resources\bullet_stop_alt.png" />
+    <None Include="Resources\bullet_stop.png" />
+    <None Include="Resources\bullet_start.png" />
+    <None Include="Resources\bullet_star.png" />
+    <None Include="Resources\bullet_sparkle.png" />
+    <None Include="Resources\bullet_shape.png" />
+    <None Include="Resources\bullet_right.png" />
+    <None Include="Resources\bullet_red.png" />
+    <None Include="Resources\bullet_purple.png" />
+    <None Include="Resources\bullet_plus.png" />
+    <None Include="Resources\bullet_pink.png" />
+    <None Include="Resources\bullet_picture.png" />
+    <None Include="Resources\bullet_page_white.png" />
+    <None Include="Resources\bullet_orange.png" />
+    <None Include="Resources\bullet_minus.png" />
+    <None Include="Resources\bullet_magnify.png" />
+    <None Include="Resources\bullet_lightning.png" />
+    <None Include="Resources\bullet_left.png" />
+    <None Include="Resources\bullet_key.png" />
+    <None Include="Resources\bullet_home.png" />
+    <None Include="Resources\bullet_green.png" />
+    <None Include="Resources\bullet_go.png" />
+    <None Include="Resources\bullet_get.png" />
+    <None Include="Resources\bullet_feed.png" />
+    <None Include="Resources\bullet_error.png" />
+    <None Include="Resources\bullet_eject.png" />
+    <None Include="Resources\bullet_edit.png" />
+    <None Include="Resources\bullet_earth.png" />
+    <None Include="Resources\bullet_disk.png" />
+    <None Include="Resources\bullet_delete.png" />
+    <None Include="Resources\bullet_database_yellow.png" />
+    <None Include="Resources\bullet_database.png" />
+    <None Include="Resources\bullet_cross.png" />
+    <None Include="Resources\bullet_connect.png" />
+    <None Include="Resources\bullet_blue.png" />
+    <None Include="Resources\bullet_black.png" />
+    <None Include="Resources\bullet_arrow_up.png" />
+    <None Include="Resources\bullet_arrow_top.png" />
+    <None Include="Resources\bullet_arrow_down.png" />
+    <None Include="Resources\bullet_arrow_bottom.png" />
+    <None Include="Resources\bullet_add.png" />
+    <None Include="Resources\building_link.png" />
+    <None Include="Resources\building_key.png" />
+    <None Include="Resources\building_go.png" />
+    <None Include="Resources\building_error.png" />
+    <None Include="Resources\building_edit.png" />
+    <None Include="Resources\building_delete.png" />
+    <None Include="Resources\building_add.png" />
+    <None Include="Resources\building.png" />
+    <None Include="Resources\build_cancel.png" />
+    <None Include="Resources\build.png" />
+    <None Include="Resources\bug_magnify.png" />
+    <None Include="Resources\bug_link.png" />
+    <None Include="Resources\bug_go.png" />
+    <None Include="Resources\bug_fix.png" />
+    <None Include="Resources\bug_error.png" />
+    <None Include="Resources\bug_edit.png" />
+    <None Include="Resources\bug_delete.png" />
+    <None Include="Resources\bug_add.png" />
+    <None Include="Resources\bug.png" />
+    <None Include="Resources\briefcase.png" />
+    <None Include="Resources\bricks.png" />
+    <None Include="Resources\brick_magnify.png" />
+    <None Include="Resources\brick_link.png" />
+    <None Include="Resources\brick_go.png" />
+    <None Include="Resources\brick_error.png" />
+    <None Include="Resources\brick_edit.png" />
+    <None Include="Resources\brick_delete.png" />
+    <None Include="Resources\brick_add.png" />
+    <None Include="Resources\brick.png" />
+    <None Include="Resources\box_world.png" />
+    <None Include="Resources\box_picture.png" />
+    <None Include="Resources\box_error.png" />
+    <None Include="Resources\box.png" />
+    <None Include="Resources\border_top.png" />
+    <None Include="Resources\border_right.png" />
+    <None Include="Resources\border_outer.png" />
+    <None Include="Resources\border_none.png" />
+    <None Include="Resources\border_left.png" />
+    <None Include="Resources\border_inner_vertical.png" />
+    <None Include="Resources\border_inner_horizontal.png" />
+    <None Include="Resources\border_inner.png" />
+    <None Include="Resources\border_draw.png" />
+    <None Include="Resources\border_bottom.png" />
+    <None Include="Resources\border_all.png" />
+    <None Include="Resources\bookmark_go.png" />
+    <None Include="Resources\bookmark_error.png" />
+    <None Include="Resources\bookmark_edit.png" />
+    <None Include="Resources\bookmark_delete.png" />
+    <None Include="Resources\bookmark_add.png" />
+    <None Include="Resources\bookmark.png" />
+    <None Include="Resources\book_tabs.png" />
+    <None Include="Resources\book_red.png" />
+    <None Include="Resources\book_previous.png" />
+    <None Include="Resources\book_open_mark.png" />
+    <None Include="Resources\book_open.png" />
+    <None Include="Resources\book_next.png" />
+    <None Include="Resources\book_magnify.png" />
+    <None Include="Resources\book_link.png" />
+    <None Include="Resources\book_key.png" />
+    <None Include="Resources\book_go.png" />
+    <None Include="Resources\book_error.png" />
+    <None Include="Resources\book_edit.png" />
+    <None Include="Resources\book_delete.png" />
+    <None Include="Resources\book_addresses_key.png" />
+    <None Include="Resources\book_addresses_error.png" />
+    <None Include="Resources\book_addresses_edit.png" />
+    <None Include="Resources\book_addresses_delete.png" />
+    <None Include="Resources\book_addresses_add.png" />
+    <None Include="Resources\book_addresses.png" />
+    <None Include="Resources\book_add.png" />
+    <None Include="Resources\book.png" />
+    <None Include="Resources\bomb.png" />
+    <None Include="Resources\blank.png" />
+    <None Include="Resources\bin_empty.png" />
+    <None Include="Resources\bin_closed.png" />
+    <None Include="Resources\bin.png" />
+    <None Include="Resources\bell_stop.png" />
+    <None Include="Resources\bell_start.png" />
+    <None Include="Resources\bell_silver_stop.png" />
+    <None Include="Resources\bell_silver_start.png" />
+    <None Include="Resources\bell_silver.png" />
+    <None Include="Resources\bell_link.png" />
+    <None Include="Resources\bell_go.png" />
+    <None Include="Resources\bell_error.png" />
+    <None Include="Resources\bell_delete.png" />
+    <None Include="Resources\bell_add.png" />
+    <None Include="Resources\bell.png" />
+    <None Include="Resources\basket_remove.png" />
+    <None Include="Resources\basket_put.png" />
+    <None Include="Resources\basket_go.png" />
+    <None Include="Resources\basket_error.png" />
+    <None Include="Resources\basket_edit.png" />
+    <None Include="Resources\basket_delete.png" />
+    <None Include="Resources\basket_add.png" />
+    <None Include="Resources\basket.png" />
+    <None Include="Resources\award_star_silver_3.png" />
+    <None Include="Resources\award_star_silver_2.png" />
+    <None Include="Resources\award_star_silver_1.png" />
+    <None Include="Resources\award_star_gold_3.png" />
+    <None Include="Resources\award_star_gold_2.png" />
+    <None Include="Resources\award_star_gold_1.png" />
+    <None Include="Resources\award_star_delete.png" />
+    <None Include="Resources\award_star_bronze_3.png" />
+    <None Include="Resources\award_star_bronze_2.png" />
+    <None Include="Resources\award_star_bronze_1.png" />
+    <None Include="Resources\award_star_add.png" />
+    <None Include="Resources\attach.png" />
+    <None Include="Resources\asterisk_yellow.png" />
+    <None Include="Resources\asterisk_red.png" />
+    <None Include="Resources\asterisk_orange.png" />
+    <None Include="Resources\arrow_up.png" />
+    <None Include="Resources\arrow_undo.png" />
+    <None Include="Resources\arrow_turn_right.png" />
+    <None Include="Resources\arrow_turn_left.png" />
+    <None Include="Resources\arrow_switch_bluegreen.png" />
+    <None Include="Resources\arrow_switch.png" />
+    <None Include="Resources\arrow_sw_ne.png" />
+    <None Include="Resources\arrow_sw.png" />
+    <None Include="Resources\arrow_se.png" />
+    <None Include="Resources\arrow_rotate_clockwise.png" />
+    <None Include="Resources\arrow_rotate_anticlockwise.png" />
+    <None Include="Resources\arrow_right.png" />
+    <None Include="Resources\arrow_refresh_small.png" />
+    <None Include="Resources\arrow_refresh.png" />
+    <None Include="Resources\arrow_redo.png" />
+    <None Include="Resources\arrow_out_longer.png" />
+    <None Include="Resources\arrow_out.png" />
+    <None Include="Resources\arrow_nw_se.png" />
+    <None Include="Resources\arrow_nw_ne_sw_se.png" />
+    <None Include="Resources\arrow_nw.png" />
+    <None Include="Resources\arrow_nsew.png" />
+    <None Include="Resources\arrow_ns.png" />
+    <None Include="Resources\arrow_ne.png" />
+    <None Include="Resources\arrow_merge.png" />
+    <None Include="Resources\arrow_left.png" />
+    <None Include="Resources\arrow_join.png" />
+    <None Include="Resources\arrow_inout.png" />
+    <None Include="Resources\arrow_in_longer.png" />
+    <None Include="Resources\arrow_in.png" />
+    <None Include="Resources\arrow_ew.png" />
+    <None Include="Resources\arrow_down.png" />
+    <None Include="Resources\arrow_divide.png" />
+    <None Include="Resources\arrow_branch.png" />
+    <None Include="Resources\application_xp_terminal.png" />
+    <None Include="Resources\application_xp.png" />
+    <None Include="Resources\application_view_tile.png" />
+    <None Include="Resources\application_view_list.png" />
+    <None Include="Resources\application_view_icons.png" />
+    <None Include="Resources\application_view_gallery.png" />
+    <None Include="Resources\application_view_detail.png" />
+    <None Include="Resources\application_view_columns.png" />
+    <None Include="Resources\application_tile_vertical.png" />
+    <None Include="Resources\application_tile_horizontal.png" />
+    <None Include="Resources\application_stop.png" />
+    <None Include="Resources\application_start.png" />
+    <None Include="Resources\application_split.png" />
+    <None Include="Resources\application_side_tree.png" />
+    <None Include="Resources\application_side_list.png" />
+    <None Include="Resources\application_side_expand.png" />
+    <None Include="Resources\application_side_contract.png" />
+    <None Include="Resources\application_side_boxes.png" />
+    <None Include="Resources\application_put.png" />
+    <None Include="Resources\application_osx_terminal.png" />
+    <None Include="Resources\application_osx_stop.png" />
+    <None Include="Resources\application_osx_start.png" />
+    <None Include="Resources\application_osx_split.png" />
+    <None Include="Resources\application_osx_link.png" />
+    <None Include="Resources\application_osx_lightning.png" />
+    <None Include="Resources\application_osx_key.png" />
+    <None Include="Resources\application_osx_home.png" />
+    <None Include="Resources\application_osx_go.png" />
+    <None Include="Resources\application_osx_get.png" />
+    <None Include="Resources\application_osx_error.png" />
+    <None Include="Resources\application_osx_double.png" />
+    <None Include="Resources\application_osx_delete.png" />
+    <None Include="Resources\application_osx_cascade.png" />
+    <None Include="Resources\application_osx_add.png" />
+    <None Include="Resources\application_osx.png" />
+    <None Include="Resources\application_link.png" />
+    <None Include="Resources\application_lightning.png" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
